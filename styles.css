@@ -1,0 +1,3855 @@
+
+/* ==================================================
+   NISARGA GIRISH KUMAR — PORTFOLIO
+   PART 1: HOMEPAGE / HERO SECTION
+================================================== */
+
+
+/* ==================================================
+   01. DESIGN VARIABLES
+================================================== */
+
+:root {
+
+    /* Background */
+    --sky-blue: #dceffb;
+    --sky-bottom: #d8ecf8;
+
+    /* Burgundy */
+    --burgundy: #9a2f57;
+    --burgundy-dark: #822548;
+
+    /* Typography Colors */
+    --text-dark: #111728;
+    --text-muted: #597487;
+
+    /* Borders */
+    --border-color: rgba(105, 136, 158, 0.27);
+
+    /* Fonts */
+    --font-heading: "Playfair Display", Georgia, serif;
+    --font-body: "DM Sans", Arial, sans-serif;
+
+    /* Navigation */
+    --header-height: 81px;
+
+}
+
+
+/* ==================================================
+   02. GLOBAL RESET
+================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 90%;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--burgundy);
+    outline-offset: 5px;
+}
+
+
+/* ==================================================
+   03. HOMEPAGE BACKGROUND
+================================================== */
+
+.homepage {
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    background: linear-gradient(
+        160deg,
+        #e6f4fc 0%,
+        var(--sky-blue) 42%,
+        var(--sky-bottom) 100%
+    );
+
+}
+
+
+/* Main Container */
+
+.container {
+
+    width: min(92%, 1720px);
+    margin-inline: auto;
+    padding-inline: 18px;
+
+}
+
+
+/* ==================================================
+   04. NAVIGATION BAR
+================================================== */
+
+.navbar {
+
+    height: var(--header-height);
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    gap: 24px;
+
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+
+/* Logo */
+
+.logo {
+
+    justify-self: start;
+
+    font-family: var(--font-heading);
+    font-size: 40px;
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: -0.08em;
+
+    color: var(--burgundy);
+
+}
+
+
+/* Navigation Links */
+
+.nav-links {
+
+    display: flex;
+    align-items: center;
+
+    gap: clamp(32px, 3.5vw, 64px);
+
+}
+
+.nav-links a {
+
+    font-size: 16px;
+    font-weight: 400;
+
+    transition: color 0.2s ease;
+
+}
+
+.nav-links a:hover {
+    color: var(--burgundy);
+}
+
+
+/* Name on Right */
+
+.nav-name {
+
+    justify-self: end;
+
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 400;
+
+    line-height: 1.25;
+
+    color: var(--burgundy);
+    white-space: nowrap;
+
+}
+
+
+/* ==================================================
+   05. HERO SECTION — MAIN LAYOUT
+================================================== */
+
+.hero {
+
+    position: relative;
+
+    /* Fill the remaining screen below the navbar */
+    height: calc(100svh - var(--header-height));
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+
+/* ==================================================
+   06. HERO CONTENT — LEFT SIDE
+================================================== */
+
+.hero-content {
+
+    position: relative;
+    z-index: 2;
+
+    width: min(60%, 820px);
+
+    padding-left: clamp(18px, 2vw, 36px);
+
+    transform: translateY(10px);
+
+}
+
+
+/* ==================================================
+   07. INTRODUCTION LABEL
+================================================== */
+
+.hero-label {
+
+    margin: 0 0 40px;
+
+    font-size: clamp(10px, 0.76vw, 13px);
+    font-weight: 600;
+
+    letter-spacing: 0.22em;
+    line-height: 1.5;
+
+    color: var(--text-muted);
+
+    white-space: nowrap;
+
+}
+
+.hero-label span {
+
+    color: var(--burgundy);
+    margin: 0 0.7em;
+
+}
+
+
+/* ==================================================
+   08. MAIN HEADING
+================================================== */
+
+.hero-title {
+
+    margin: 0;
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(46px, 4.1vw, 80px);
+    font-weight: 400;
+
+    line-height: 1.11;
+    letter-spacing: -0.058em;
+
+    color: var(--text-dark);
+
+}
+
+
+/* Each Heading Line */
+
+.hero-title span,
+.hero-title em {
+
+    display: block;
+    white-space: nowrap;
+
+}
+
+
+/* Burgundy Italic Heading */
+
+.hero-title em {
+
+    font-style: italic;
+    font-weight: 400;
+
+    color: var(--burgundy);
+    letter-spacing: -0.065em;
+
+}
+
+
+/* ==================================================
+   09. DESCRIPTION
+================================================== */
+
+.hero-description {
+
+    margin: 35px 0 0;
+
+    /* Comfortable line length */
+    max-width: 610px;
+
+    font-size: clamp(14px, 1.05vw, 19px);
+    font-weight: 400;
+
+    line-height: 1.75;
+
+    color: var(--text-muted);
+
+}
+
+
+/* ==================================================
+   10. VIEW MY WORK BUTTON
+================================================== */
+
+.work-button {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 27px;
+
+    margin-top: 48px;
+
+    min-height: 64px;
+    padding: 0 35px;
+
+    background: var(--burgundy);
+    color: #ffffff;
+
+    border-radius: 999px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+/* Button Hover */
+
+.work-button:hover {
+
+    background: var(--burgundy-dark);
+    transform: translateY(-2px);
+
+}
+
+
+/* Button Arrow */
+
+.work-button span {
+
+    font-size: 22px;
+    line-height: 1;
+
+}
+
+
+/* ==================================================
+   11. PORTRAIT — RIGHT SIDE
+================================================== */
+
+.portrait-area {
+
+    position: absolute;
+
+    right: clamp(35px, 4vw, 70px);
+    bottom: 0;
+
+    z-index: 1;
+
+    /*
+       Portrait scales with the screen width.
+       The bottom remains aligned to the hero.
+    */
+
+    width: min(34vw, 630px);
+    transform: translateY(-55px);
+
+    pointer-events: none;
+
+}
+
+.portrait {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+}
+
+
+/* ==================================================
+   12. LAPTOPS & MEDIUM DESKTOP SCREENS
+   Screens up to 1450px
+================================================== */
+
+@media (max-width: 1450px) {
+
+    :root {
+        --header-height: 72px;
+    }
+
+    /* Navigation */
+
+    .logo {
+        font-size: 36px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .nav-name {
+        font-size: 16px;
+    }
+
+    /* Hero Content */
+
+    .hero-content {
+        width: min(64%, 760px);
+    }
+
+    /* Introduction Label */
+
+    .hero-label {
+
+        margin-bottom: 22px;
+        letter-spacing: 0.16em;
+
+    }
+
+    /* Heading */
+
+    .hero-title {
+        font-size: clamp(41px, 4.15vw, 65px);
+    }
+
+    /* Description */
+
+    .hero-description {
+
+        max-width: 630px;
+        margin-top: 30px;
+
+        font-size: clamp(13px, 1.05vw, 16px);
+        line-height: 1.6;
+
+    }
+
+    /* Button */
+
+    .work-button {
+
+        margin-top: 26px;
+
+        min-height: 50px;
+        padding: 0 26px;
+
+        font-size: 14px;
+
+    }
+
+    /* Portrait */
+
+    .portrait-area {
+        width: min(40vw, 560px);
+    }
+
+}
+
+
+/* ==================================================
+   13. TABLET & SMALL LAPTOP
+   Screens up to 1050px
+================================================== */
+
+@media (max-width: 1050px) {
+
+    /* Container */
+
+    .container {
+        width: calc(100% - 56px);
+    }
+
+    /* Hero Content */
+
+    .hero-content {
+
+        width: 65%;
+        padding-left: 0;
+
+    }
+
+    /* Introduction Label */
+
+    .hero-label {
+
+        margin-bottom: 19px;
+
+        font-size: 8px;
+        letter-spacing: 0.12em;
+
+        white-space: normal;
+
+    }
+
+    .hero-label span {
+        margin: 0 0.4em;
+    }
+
+    /* Heading */
+
+    .hero-title {
+        font-size: clamp(36px, 4.6vw, 50px);
+    }
+
+    .hero-title span,
+    .hero-title em {
+        white-space: normal;
+    }
+
+    /* Description */
+
+    .hero-description {
+
+        max-width: 95%;
+        margin-top: 20px;
+
+        font-size: 13px;
+
+    }
+
+    /* Button */
+
+    .work-button {
+
+        margin-top: 22px;
+        min-height: 44px;
+
+    }
+
+    /* Portrait */
+
+    .portrait-area {
+        width: min(37vw, 400px);
+    }
+
+}
+
+
+/* ==================================================
+   14. SHORT LAPTOP SCREENS
+   Reduce vertical spacing on shorter displays
+================================================== */
+
+@media (min-width: 701px) and (max-height: 680px) {
+
+    .hero-content {
+        transform: none;
+    }
+
+    .hero-label {
+        margin-bottom: 30px;
+    }
+
+    .hero-title {
+        font-size: clamp(35px, 4vw, 60px);
+    }
+
+    .hero-description {
+
+        margin-top: 30px;
+
+        font-size: 13px;
+        line-height: 1.45;
+
+    }
+
+    .work-button {
+
+        margin-top: 40px;
+        min-height: 44px;
+
+    }
+
+    .portrait-area {
+        width: min(36vw, 62svh);
+    }
+
+}
+
+
+/* ==================================================
+   15. MOBILE RESPONSIVENESS
+   Screens up to 700px
+================================================== */
+
+@media (max-width: 700px) {
+
+    :root {
+        --header-height: 112px;
+    }
+
+    /* Container */
+
+    .container {
+        width: calc(100% - 40px);
+    }
+
+    /* Navigation */
+
+    .navbar {
+
+        height: var(--header-height);
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 57px 55px;
+
+        gap: 0;
+
+    }
+
+    .logo {
+        font-size: 33px;
+    }
+
+    .nav-name {
+        font-size: 12px;
+    }
+
+    .nav-links {
+
+        grid-column: 1 / -1;
+        grid-row: 2;
+
+        justify-self: center;
+
+        gap: clamp(22px, 6vw, 40px);
+
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    /* Hero Layout */
+
+    .hero {
+
+        height: auto;
+        min-height: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding-top: clamp(62px, 12vw, 88px);
+
+        overflow: hidden;
+
+    }
+
+    /* Hero Content */
+
+    .hero-content {
+
+        width: 100%;
+
+        padding-left: 0;
+        transform: none;
+
+    }
+
+    /* Introduction Label */
+
+    .hero-label {
+
+        margin-bottom: 22px;
+
+        font-size: clamp(8px, 2vw, 10px);
+
+        letter-spacing: 0.13em;
+        line-height: 1.8;
+
+        white-space: normal;
+
+    }
+
+    /* Heading */
+
+    .hero-title {
+
+        font-size: clamp(36px, 8.4vw, 57px);
+        line-height: 1.13;
+
+    }
+
+    .hero-title span,
+    .hero-title em {
+        white-space: normal;
+    }
+
+    /* Description */
+
+    .hero-description {
+
+        max-width: 530px;
+
+        margin-top: 24px;
+
+        font-size: 14px;
+        line-height: 1.65;
+
+    }
+
+    /* Button */
+
+    .work-button {
+
+        min-height: 48px;
+
+        margin-top: 24px;
+        padding: 0 26px;
+
+        font-size: 14px;
+
+    }
+
+    /* Portrait Moves Below Text */
+
+    .portrait-area {
+
+        position: relative;
+
+        right: auto;
+        bottom: auto;
+
+        width: min(79%, 360px);
+
+        align-self: center;
+
+        margin-top: 40px;
+
+    }
+
+}
+
+
+/* ==================================================
+   16. SMALL MOBILE PHONES
+   Screens up to 370px
+================================================== */
+
+@media (max-width: 370px) {
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .hero {
+        padding-top: 48px;
+    }
+
+    .hero-title {
+        font-size: 34px;
+    }
+
+    .hero-label {
+
+        font-size: 7.6px;
+        letter-spacing: 0.11em;
+
+    }
+
+}
+
+
+/* ==================================================
+   17. ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+
+}
+
+
+/* ==================================================
+   PART 2 — ABOUT ME SECTION
+   REVISED CSS STARTS HERE
+================================================== */
+
+
+/* ==================================================
+   PART 2 — ABOUT ME SECTION
+================================================== */
+
+
+/* ==================================================
+   18. ABOUT SECTION BACKGROUND & SPACING
+================================================== */
+
+.about-section {
+    width: 100%;
+
+    /* Fill one screen when content allows */
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+
+    /* Reduced vertical spacing */
+    padding: clamp(24px, 3svh, 40px) 0;
+
+    background: linear-gradient(
+        120deg,
+        #e3f3fd 0%,
+        #dceffa 55%,
+        #d7ecf9 100%
+    );
+
+    border-top: 1px solid var(--border-color);
+
+    scroll-margin-top: 0;
+}
+
+
+/* ==================================================
+   19. ABOUT CONTAINER
+================================================== */
+
+.about-container {
+    width: min(92%, 1720px);
+    max-width: 1720px;
+
+    margin-inline: auto;
+    padding-inline: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.93fr)
+        minmax(0, 1.07fr);
+
+    align-items: center;
+
+    gap: clamp(35px, 4vw, 70px);
+}
+
+
+/* ==================================================
+   20. ABOUT LEFT CONTENT
+================================================== */
+
+.about-content {
+    min-width: 0;
+
+    padding-left: clamp(18px, 2vw, 36px);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+/* Section Number */
+
+.about-number {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 18px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: var(--burgundy);
+}
+
+
+/* Burgundy Divider */
+
+.about-number-line {
+    width: 50px;
+    height: 2px;
+
+    background: var(--burgundy);
+}
+
+
+/* ==================================================
+   21. ABOUT ME HEADING
+================================================== */
+
+.about-heading {
+    margin: 0 0 22px;
+
+    font-family: var(--font-heading);
+
+    /* Large desktop */
+    font-size: clamp(46px, 4vw, 66px);
+
+    font-weight: 400;
+    line-height: 1.12;
+
+    letter-spacing: -0.06em;
+
+    color: var(--text-dark);
+}
+
+
+/* Highlighted Word */
+
+.about-heading em {
+    font-style: italic;
+    font-weight: 400;
+
+    color: var(--burgundy);
+}
+
+
+/* ==================================================
+   22. ABOUT INTRODUCTION
+================================================== */
+
+.about-introduction {
+    margin-bottom: 14px;
+}
+
+
+/* Introduction Heading */
+
+.about-introduction h3 {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 0;
+
+    font-family: var(--font-body);
+
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.45;
+
+    color: var(--text-dark);
+}
+
+
+/* Hand-Drawn Heart */
+
+.about-heart {
+    width: 28px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    color: var(--burgundy);
+
+    transform: rotate(-8deg);
+}
+
+
+/* ==================================================
+   23. ABOUT DESCRIPTION
+================================================== */
+
+.about-description {
+    max-width: 620px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* Paragraphs */
+
+.about-description p {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: var(--text-muted);
+}
+
+
+/* ==================================================
+   24. ABOUT BUTTON
+================================================== */
+
+/*
+   Supports your existing About button classes.
+   If you use "work-button" in the HTML, it also
+   receives the same About section spacing.
+*/
+
+.about-content .about-button,
+.about-content .about-work-link,
+.about-content .work-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    max-width: 100%;
+    flex: 0 0 auto;
+
+    gap: 16px;
+
+    min-height: 48px;
+
+    margin-top: 24px;
+    padding: 0 24px;
+
+    background: var(--burgundy);
+    color: #ffffff;
+
+    border-radius: 999px;
+
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Prevent Text Wrapping */
+
+.about-content .about-button > span {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+
+/* SVG Arrow for about-button */
+
+.about-content .about-button svg {
+    display: block;
+
+    width: 18px;
+    height: 18px;
+
+    flex: 0 0 18px;
+}
+
+
+/* Arrow for about-work-link */
+
+.about-content .about-work-link::after {
+    content: "↗";
+
+    display: inline-block;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+
+    flex-shrink: 0;
+}
+
+
+/* Arrow for shared work-button */
+
+.about-content .work-button span {
+    font-size: 18px;
+    line-height: 1;
+
+    flex-shrink: 0;
+}
+
+
+/* Hover */
+
+.about-content .about-button:hover,
+.about-content .about-work-link:hover,
+.about-content .work-button:hover {
+    background: var(--burgundy-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   25. ABOUT RIGHT CONTENT
+================================================== */
+
+.about-details {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    /* Smaller gap between cards */
+    gap: 18px;
+
+    padding-top: 0;
+}
+
+
+/* Shared Card Appearance */
+
+.about-info-card,
+.about-skills-card {
+    background: rgba(255, 255, 255, 0.52);
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.45);
+
+    border-radius: 18px;
+}
+
+
+/* ==================================================
+   26. EDUCATION / EXPERIENCE / LOCATION CARD
+================================================== */
+
+.about-info-card {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    /* Compact card height */
+    padding: 17px 10px;
+}
+
+
+/* Individual Columns */
+
+.about-info-item {
+    position: relative;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 0 16px;
+}
+
+
+/* Dividing Lines */
+
+.about-info-item:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 12px;
+    bottom: 4px;
+
+    width: 1px;
+
+    background: rgba(118, 158, 181, 0.35);
+}
+
+
+/* ==================================================
+   27. INFORMATION ICONS
+================================================== */
+
+.about-icon-circle {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    background: rgba(169, 38, 82, 0.08);
+
+    border-radius: 50%;
+}
+
+
+/* SVG Icons */
+
+.about-icon-circle svg {
+    width: 25px;
+    height: 25px;
+
+    color: var(--burgundy);
+}
+
+
+/* ==================================================
+   28. INFORMATION CARD TYPOGRAPHY
+================================================== */
+
+.about-info-item h3 {
+    margin: 0 0 6px;
+
+    font-family: var(--font-body);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: var(--text-dark);
+}
+
+
+/* Supporting Text */
+
+.about-info-item p {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    color: var(--text-muted);
+}
+
+.about-info-item p span {
+    display: block;
+}
+
+
+/* ==================================================
+   29. SKILLS & TOOLS CARD
+================================================== */
+
+.about-skills-card {
+    padding: 19px 20px;
+}
+
+
+/* ==================================================
+   30. SKILLS HEADING
+================================================== */
+
+.skills-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+}
+
+
+/* Decorative Star */
+
+.skills-star {
+    font-size: 26px;
+    line-height: 1;
+
+    color: var(--burgundy);
+}
+
+
+/* Heading Text */
+
+.skills-heading h3 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+
+    font-size: 26px;
+    font-weight: 400;
+
+    letter-spacing: -0.04em;
+
+    color: var(--text-dark);
+
+    white-space: nowrap;
+}
+
+
+/* Decorative Line */
+
+.skills-heading-line {
+    width: 40px;
+    height: 2px;
+
+    background: var(--burgundy);
+}
+
+
+/* ==================================================
+   31. SKILLS ROWS
+================================================== */
+
+.skills-row {
+    display: grid;
+
+    grid-template-columns:
+        130px minmax(0, 1fr);
+
+    align-items: start;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+.skills-row:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==================================================
+   32. SKILLS CATEGORY LABELS
+================================================== */
+
+.skills-category {
+    display: flex;
+    align-items: center;
+
+    min-height: 35px;
+
+    padding: 0 13px;
+
+    border-radius: 50px;
+
+    background: rgba(169, 38, 82, 0.08);
+
+    color: var(--burgundy);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+
+/* ==================================================
+   33. SKILL TAGS
+================================================== */
+
+.skills-tags {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+
+/* Individual Skill Tags */
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 35px;
+
+    padding: 0 12px;
+
+    border: 1px solid #c6ddea;
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    color: var(--text-dark);
+
+    font-size: 12px;
+    font-weight: 400;
+
+    white-space: nowrap;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Hover */
+
+.skill-tag:hover {
+    border-color: var(--burgundy);
+
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ==================================================
+   34. LAPTOP RESPONSIVENESS
+   769px — 1450px
+   HEADING REMAINS EXACTLY 36PX
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1450px) {
+
+    /* Section */
+
+    .about-section {
+        padding: 22px 0;
+    }
+
+    /* Container */
+
+    .about-container {
+        gap: 35px;
+    }
+
+    /* Main Heading */
+
+    .about-heading {
+        font-size: 36px;
+        line-height: 1.12;
+
+        margin-bottom: 20px;
+    }
+
+    /* Section Number */
+
+    .about-number {
+        font-size: 12px;
+        margin-bottom: 17px;
+    }
+
+    /* Introduction */
+
+    .about-introduction {
+        margin-bottom: 13px;
+    }
+
+    .about-introduction h3 {
+        font-size: 14px;
+    }
+
+    .about-heart {
+        width: 25px;
+        height: 28px;
+    }
+
+    /* Paragraphs */
+
+    .about-description {
+        gap: 12px;
+    }
+
+    .about-description p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* Button */
+
+    .about-content .about-button,
+    .about-content .about-work-link,
+    .about-content .work-button {
+        min-height: 44px;
+
+        margin-top: 20px;
+        padding: 0 22px;
+
+        font-size: 13px;
+    }
+
+    /* Information Card */
+
+    .about-info-card {
+        padding: 15px 9px;
+    }
+
+    .about-info-item {
+        padding: 0 12px;
+    }
+
+    .about-icon-circle {
+        width: 44px;
+        height: 44px;
+
+        margin-bottom: 8px;
+    }
+
+    .about-icon-circle svg {
+        width: 23px;
+        height: 23px;
+    }
+
+    .about-info-item h3 {
+        font-size: 13px;
+    }
+
+    .about-info-item p {
+        font-size: 11.5px;
+    }
+
+    /* Skills Card */
+
+    .about-skills-card {
+        padding: 17px 18px;
+    }
+
+    .skills-heading {
+        margin-bottom: 15px;
+    }
+
+    .skills-heading h3 {
+        font-size: 23px;
+    }
+
+    .skills-star {
+        font-size: 24px;
+    }
+
+    .skills-row {
+        grid-template-columns:
+            115px minmax(0, 1fr);
+
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .skills-category {
+        min-height: 32px;
+
+        padding: 0 10px;
+
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .skill-tag {
+        min-height: 32px;
+
+        padding: 0 10px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* ==================================================
+   35. TABLET RESPONSIVENESS
+   Screens up to 1050px
+================================================== */
+
+@media (max-width: 1050px) {
+
+    /* Allow content to grow vertically */
+
+    .about-section {
+        min-height: auto;
+
+        padding: 45px 0 55px;
+    }
+
+    /* Stack columns vertically */
+
+    .about-container {
+        width: calc(100% - 56px);
+        max-width: 790px;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    /* Left Content */
+
+    .about-content {
+        padding-left: 0;
+    }
+
+    /* Keep laptop heading at 36px */
+
+    .about-heading {
+        margin-bottom: 20px;
+    }
+
+    .about-description {
+        max-width: 650px;
+    }
+
+    /* Right Cards */
+
+    .about-details {
+        padding-top: 0;
+        gap: 18px;
+    }
+
+    .about-info-card {
+        padding: 18px 12px;
+    }
+
+    .about-skills-card {
+        padding: 20px;
+    }
+
+    .skills-row {
+        grid-template-columns:
+            125px minmax(0, 1fr);
+    }
+}
+
+
+/* ==================================================
+   36. MOBILE RESPONSIVENESS
+   Screens up to 768px
+================================================== */
+
+@media (max-width: 768px) {
+
+    /* Section */
+
+    .about-section {
+        min-height: auto;
+
+        padding: 40px 0 50px;
+    }
+
+    /* Container */
+
+    .about-container {
+        width: calc(100% - 42px);
+        max-width: none;
+
+        padding-inline: 0;
+
+        gap: 30px;
+    }
+
+    /* Section Number */
+
+    .about-number {
+        gap: 18px;
+
+        margin-bottom: 18px;
+
+        font-size: 11px;
+    }
+
+    .about-number-line {
+        width: 40px;
+    }
+
+    /* Main Heading */
+
+    .about-heading {
+        font-size: 32px;
+        line-height: 1.12;
+
+        margin-bottom: 20px;
+    }
+
+    /* Introduction */
+
+    .about-introduction {
+        margin-bottom: 13px;
+    }
+
+    .about-introduction h3 {
+        font-size: 13px;
+        line-height: 1.5;
+
+        gap: 7px;
+    }
+
+    .about-heart {
+        width: 23px;
+        height: 27px;
+    }
+
+    /* Paragraphs */
+
+    .about-description {
+        gap: 13px;
+
+        max-width: 100%;
+    }
+
+    .about-description p {
+        font-size: 12.5px;
+        line-height: 1.65;
+    }
+
+    /* Button */
+
+    .about-content .about-button,
+    .about-content .about-work-link,
+    .about-content .work-button {
+        min-height: 40px;
+
+        margin-top: 20px;
+        padding: 0 18px;
+
+        gap: 13px;
+
+        font-size: 12px;
+    }
+
+    .about-content .about-button svg {
+        width: 16px;
+        height: 16px;
+
+        flex-basis: 16px;
+    }
+
+    .about-content .about-work-link::after,
+    .about-content .work-button span {
+        font-size: 16px;
+    }
+
+    /* Information Card */
+
+    .about-info-card {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    /* Information Items */
+
+    .about-info-item {
+        display: grid;
+
+        grid-template-columns:
+            44px minmax(0, 1fr);
+
+        column-gap: 12px;
+
+        align-items: center;
+
+        padding: 0 0 14px;
+    }
+
+    .about-info-item:not(:last-child) {
+        border-bottom: 1px solid
+            rgba(118, 158, 181, 0.25);
+    }
+
+    .about-info-item:last-child {
+        padding-bottom: 0;
+    }
+
+    .about-info-item:not(:last-child)::after {
+        display: none;
+    }
+
+    /* Icons */
+
+    .about-icon-circle {
+        grid-column: 1;
+        grid-row: 1 / 3;
+
+        width: 44px;
+        height: 44px;
+
+        margin: 0;
+    }
+
+    .about-icon-circle svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Information Text */
+
+    .about-info-item h3 {
+        grid-column: 2;
+
+        margin: 0 0 2px;
+
+        font-size: 12px;
+    }
+
+    .about-info-item p {
+        grid-column: 2;
+
+        font-size: 11.5px;
+        line-height: 1.5;
+    }
+
+    /* Skills Card */
+
+    .about-skills-card {
+        padding: 20px 17px;
+    }
+
+    /* Skills Heading */
+
+    .skills-heading {
+        gap: 10px;
+
+        margin-bottom: 18px;
+    }
+
+    .skills-heading h3 {
+        font-size: 21px;
+    }
+
+    .skills-star {
+        font-size: 22px;
+    }
+
+    .skills-heading-line {
+        width: 27px;
+    }
+
+    /* Stack Skill Categories */
+
+    .skills-row {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+        margin-bottom: 17px;
+    }
+
+    /* Categories */
+
+    .skills-category {
+        width: fit-content;
+
+        min-height: 30px;
+
+        padding: 0 12px;
+
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    /* Skill Tags */
+
+    .skills-tags {
+        gap: 7px;
+    }
+
+    .skill-tag {
+        min-height: 31px;
+
+        padding: 0 10px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* ==================================================
+   37. SMALL MOBILE
+   Screens up to 480px
+================================================== */
+
+@media (max-width: 480px) {
+
+    .about-section {
+        padding: 35px 0 45px;
+    }
+
+    .about-container {
+        width: calc(100% - 36px);
+        gap: 26px;
+    }
+
+    /* Heading */
+
+    .about-heading {
+        font-size: 30px;
+    }
+
+    /* Introduction */
+
+    .about-introduction h3 {
+        font-size: 12px;
+    }
+
+    .about-heart {
+        width: 21px;
+        height: 24px;
+    }
+
+    /* Paragraphs */
+
+    .about-description p {
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    /* Information Card */
+
+    .about-info-card {
+        padding: 17px;
+    }
+
+    /* Skills */
+
+    .about-skills-card {
+        padding: 17px 15px;
+    }
+
+    .skills-heading h3 {
+        font-size: 20px;
+    }
+
+    .skill-tag {
+        font-size: 10.5px;
+    }
+}
+
+
+/* ==================================================
+   38. EXTRA SMALL MOBILE
+   Screens up to 375px
+================================================== */
+
+@media (max-width: 375px) {
+
+    .about-container {
+        width: calc(100% - 30px);
+    }
+
+    .about-heading {
+        font-size: 28px;
+    }
+
+    .about-introduction h3 {
+        font-size: 12px;
+    }
+
+    .about-description p {
+        font-size: 12px;
+    }
+
+    .about-info-card {
+        padding: 15px 12px;
+    }
+
+    .about-skills-card {
+        padding: 16px 12px;
+    }
+
+    .skills-row {
+        gap: 9px;
+    }
+
+    .skill-tag {
+        font-size: 10px;
+        padding: 0 9px;
+    }
+}
+
+
+/* ==================================================
+   39. SHORT DESKTOP SCREENS
+   Additional spacing adjustments
+================================================== */
+
+@media (min-width: 1051px) and (max-height: 700px) {
+
+    .about-section {
+        padding: 16px 0;
+    }
+
+    .about-number {
+        margin-bottom: 12px;
+    }
+
+    .about-heading {
+        margin-bottom: 15px;
+    }
+
+    .about-introduction {
+        margin-bottom: 10px;
+    }
+
+    .about-description {
+        gap: 10px;
+    }
+
+    .about-description p {
+        line-height: 1.5;
+    }
+
+    .about-content .about-button,
+    .about-content .about-work-link,
+    .about-content .work-button {
+        margin-top: 16px;
+    }
+
+    .about-details {
+        gap: 12px;
+    }
+
+    .about-info-card {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .about-skills-card {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+}
+
+
+/* ==================================================
+   40. ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-content .about-button,
+    .about-content .about-work-link,
+    .about-content .work-button,
+    .skill-tag {
+        transition: none;
+    }
+}
+
+
+/* ==================================================
+   PART 3 — SELECTED WORK
+   STRAIGHT VERTICAL PROJECT LAYOUT
+================================================== */
+
+
+/* ==========================================
+   PART 3 — SELECTED WORK
+========================================== */
+
+.selected-work-v2 {
+    --work-burgundy: var(--burgundy, #9a2f57);
+    --work-dark: var(--text-dark, #111728);
+    --work-muted: var(--text-muted, #597487);
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 120px 0 100px;
+
+    background:
+        radial-gradient(
+            circle at 95% 5%,
+            rgba(154, 47, 87, 0.10),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 3% 96%,
+            rgba(154, 47, 87, 0.07),
+            transparent 33%
+        ),
+        linear-gradient(
+            120deg,
+            #e6f5fd 0%,
+            #dceef9 60%,
+            #d8ecf8 100%
+        );
+
+    border-top: 1px solid rgba(105, 136, 158, 0.22);
+}
+
+
+/* ==========================================
+   WORK SECTION - TOP RIGHT DECORATION
+========================================== */
+
+/* ==========================================
+   WORK SECTION - SOFT PASTEL DECORATION
+========================================== */
+
+/* Main decoration container */
+
+.work-top-decoration {
+    position: absolute;
+
+    top: 20px;
+    right: 0;
+
+    width: min(52vw, 900px);
+    height: 390px;
+
+    pointer-events: none;
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+/* ==========================================
+   SOFT COLOR SPOTS
+========================================== */
+
+.work-decor-spot {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+/* Large soft lavender spot */
+
+.work-decor-spot--one {
+    width: 320px;
+    height: 320px;
+
+    top: -135px;
+    right: -65px;
+
+    background: radial-gradient(
+        circle,
+        rgba(187, 139, 195, 0.20) 0%,
+        rgba(187, 139, 195, 0.08) 45%,
+        transparent 75%
+    );
+}
+
+/* Soft blush pink spot */
+
+.work-decor-spot--two {
+    width: 250px;
+    height: 250px;
+
+    top: 165px;
+    right: 105px;
+
+    background: radial-gradient(
+        circle,
+        rgba(213, 149, 182, 0.17) 0%,
+        rgba(213, 149, 182, 0.07) 50%,
+        transparent 75%
+    );
+}
+
+/* Small pale lavender spot */
+
+.work-decor-spot--three {
+    width: 145px;
+    height: 145px;
+
+    top: 115px;
+    right: 235px;
+
+    background: radial-gradient(
+        circle,
+        rgba(167, 155, 211, 0.16) 0%,
+        rgba(167, 155, 211, 0.07) 55%,
+        transparent 80%
+    );
+}
+
+/* ==========================================
+   BURGUNDY CURVED LINE
+========================================== */
+
+.work-decor-wave {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.85;
+}
+
+/* ==========================================
+   RESPONSIVE DECORATION
+========================================== */
+
+@media (max-width: 900px) {
+
+    .work-top-decoration {
+        width: 65vw;
+        height: 280px;
+        opacity: 0.7;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .work-top-decoration {
+        width: 80vw;
+        height: 170px;
+        top: 0;
+        right: -20px;
+
+        opacity: 0.45;
+    }
+
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+    .work-top-decoration {
+        width: 85%;
+        height: 145px;
+        opacity: 0.65;
+    }
+
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.selected-work-v2__container {
+    width: min(92%, 1720px);
+    margin-inline: auto;
+    padding-inline: 18px;
+
+
+    display: grid;
+
+
+    grid-template-columns:
+        minmax(0, 0.93fr)
+        minmax(0, 1.07fr);
+
+    gap: clamp(35px, 4vw, 70px);
+    align-items: start;
+}
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+
+.selected-work-v2__left {
+    min-width: 0;
+    padding-left: clamp(18px, 2vw, 36px);
+}
+
+.selected-work-v2__intro {
+    max-width: 620px;
+    margin: 0 0 52px;
+}
+
+/* ==========================================
+   MAIN HEADING — 36PX
+========================================== */
+
+.selected-work-v2__heading {
+    margin: 0 0 24px;
+
+    font-family: var(--font-heading, Georgia, serif);
+    font-size: 36px;
+    font-weight: 400;
+
+    line-height: 1.2;
+    letter-spacing: -0.045em;
+
+    color: var(--work-dark);
+}
+
+.selected-work-v2__heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--work-burgundy);
+}
+
+/* ==========================================
+   INTRODUCTION PARAGRAPH
+========================================== */
+
+.selected-work-v2__description,
+.selected-work-v2__project-text {
+    font-family: var(--font-body, Arial, sans-serif);
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.75;
+
+    color: var(--work-muted);
+}
+
+.selected-work-v2__description {
+    width: 100%;
+    max-width: 620px;
+    margin: 0;
+}
+
+/* ==========================================
+   PROJECT LIST
+========================================== */
+
+.selected-work-v2__projects {
+    display: grid;
+    gap: 46px;
+}
+
+.selected-work-v2__row {
+    min-width: 0;
+    margin: 0;
+}
+
+.selected-work-v2__content {
+    max-width: none;
+    width: 100%;
+}
+
+/* ==========================================
+   PROJECT HEADER
+========================================== */
+
+.selected-work-v2__item-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    gap: 13px;
+    margin-bottom: 10px;
+}
+
+/* PROJECT NUMBERS */
+
+.selected-work-v2__number {
+    flex-shrink: 0;
+
+    font-family: var(--font-heading, Georgia, serif);
+    font-size: 14px;
+
+    color: var(--work-burgundy);
+}
+
+/* DIVIDER LINE */
+
+.selected-work-v2__divider {
+    align-self: center;
+
+    width: 24px;
+    height: 1px;
+    flex-shrink: 0;
+
+    background: var(--work-burgundy);
+}
+
+/* ==========================================
+   PROJECT TITLES
+========================================== */
+
+.selected-work-v2__project-title {
+    margin: 0;
+
+    font-family: var(--font-heading, Georgia, serif);
+    font-size: 22px;
+    font-weight: 400;
+
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+
+    color: #842545;
+}
+
+/* ==========================================
+   PROJECT DESCRIPTION — 13PX
+========================================== */
+
+
+.selected-work-v2__project-text {
+    max-width: none;
+    margin: 0 0 12px 51px;
+
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+
+
+/* ==========================================
+   PROJECT SKILLS
+========================================== */
+
+.selected-work-v2__skills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 14px 0 18px 51px;
+    max-width: 390px;
+}
+
+/* Individual skill tags */
+
+.selected-work-v2__skills span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 14px;
+
+    background: rgba(154, 47, 87, 0.09);
+    color: #9a2f57;
+
+    border-radius: 50px;
+
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   VISIT WEBSITE BUTTON
+========================================== */
+
+.selected-work-v2__button {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 12px;
+    min-height: 32px;
+
+    margin-left: 51px;
+    padding: 4px 14px;
+
+    border: 1px solid rgba(154, 47, 87, 0.60);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    color: var(--work-burgundy);
+
+    font-family: var(--font-body, Arial, sans-serif);
+    font-size: 12px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.selected-work-v2__button span {
+    font-size: 16px;
+}
+
+.selected-work-v2__button:hover {
+    background: var(--work-burgundy);
+    color: #ffffff;
+}
+
+/* ==========================================
+   RIGHT SIDE — OVERLAPPING PROJECT IMAGES
+========================================== */
+
+.selected-work-v2__right {
+    position: relative;
+
+    min-width: 0;
+    width: 100%;
+    height: 940px;
+}
+
+/* ==========================================
+   PROJECT IMAGE FRAMES
+========================================== */
+
+.selected-work-v2__image {
+    position: absolute;
+    display: block;
+
+    width: 100%;
+    max-width: 500px;
+
+    padding: 9px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.90);
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 18px 38px rgba(55, 81, 107, 0.13);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* ACTUAL IMAGES */
+
+.selected-work-v2__image img {
+    display: block;
+
+    width: 100%;
+    max-width: none;
+
+    height: auto;
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* ==========================================
+   BEXO EATS — TOP RIGHT
+========================================== */
+
+.selected-work-v2__image--bexo {
+    top: 200px;
+    right: 0;
+    z-index: 1;
+}
+
+/* ==========================================
+   STUDYFLOW AI — MIDDLE LEFT
+========================================== */
+
+.selected-work-v2__image--study {
+    top: 520px;
+    right: 0;
+    z-index: 2;
+}
+
+/* ==========================================
+   BERNWERK — BOTTOM RIGHT
+========================================== */
+
+.selected-work-v2__image--bernwerk {
+    top: 840px;
+    right: 0;
+    z-index: 3;
+}
+
+/* ==========================================
+   IMAGE HOVER
+========================================== */
+
+.selected-work-v2__image:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 24px 46px rgba(55, 81, 107, 0.19);
+}
+
+/* ACCESSIBILITY */
+
+.selected-work-v2 a:focus-visible {
+    outline: 2px solid var(--work-burgundy);
+    outline-offset: 5px;
+}
+
+/* ==========================================
+   LAPTOP RESPONSIVENESS
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .selected-work-v2__container {
+        grid-template-columns:
+            minmax(0, 0.90fr)
+            minmax(0, 1.10fr);
+
+        gap: 28px;
+    }
+
+    .selected-work-v2__left {
+        padding-left: 0;
+    }
+
+    .selected-work-v2__right {
+        height: 635px;
+    }
+
+    .selected-work-v2__image {
+        width: 96%;
+        padding: 7px;
+    }
+
+    .selected-work-v2__image--study {
+        top: 195px;
+    }
+
+    .selected-work-v2__image--bernwerk {
+        top: 390px;
+    }
+
+    .selected-work-v2__projects {
+        gap: 32px;
+    }
+}
+
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 780px) {
+
+    .selected-work-v2 {
+        padding: 55px 0 70px;
+    }
+
+    .selected-work-v2__container {
+        width: calc(100% - 56px);
+        max-width: 790px;
+
+        padding: 0;
+
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .selected-work-v2__left {
+        padding: 0;
+    }
+
+    .selected-work-v2__intro {
+        margin-bottom: 36px;
+    }
+
+    .selected-work-v2__projects {
+        gap: 26px;
+    }
+
+    .selected-work-v2__right {
+        height: auto;
+
+        display: grid;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .selected-work-v2__image,
+    .selected-work-v2__image--bexo,
+    .selected-work-v2__image--study,
+    .selected-work-v2__image--bernwerk {
+        position: static;
+
+        width: 100%;
+        max-width: none;
+
+        top: auto;
+        left: auto;
+        right: auto;
+    }
+
+    .selected-work-v2__image--bexo {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 540px) {
+
+    .selected-work-v2 {
+        padding: 45px 0 60px;
+    }
+
+    .selected-work-v2__container {
+        width: calc(100% - 40px);
+    }
+
+    .selected-work-v2__heading {
+        font-size: 36px;
+    }
+
+    .selected-work-v2__description,
+    .selected-work-v2__project-text {
+        font-size: 13px;
+    }
+
+    .selected-work-v2__right {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .selected-work-v2__image--bexo {
+        grid-column: auto;
+    }
+
+    .selected-work-v2__item-top {
+        gap: 9px;
+    }
+
+    .selected-work-v2__project-title {
+        font-size: 20px;
+    }
+
+    .selected-work-v2__project-text,
+    .selected-work-v2__button,
+    .selected-work-v2__button {
+        margin-left: 0;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .selected-work-v2__image,
+    .selected-work-v2__button {
+        transition: none;
+    }
+}
+
+
+
+
+/* ==================================================
+   02. MAIN CONTACT CONTAINER
+================================================== */
+
+.contact-container {
+
+    width: min(92%, 1720px);
+
+    margin-inline: auto;
+    padding-inline: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.98fr)
+        minmax(0, 1.02fr);
+
+    align-items: center;
+
+    gap: clamp(55px, 6vw, 120px);
+
+}
+
+
+/* ==========================================
+   PART 4 — CONTACT SECTION
+========================================== */
+
+.contact-section {
+    width: 100%;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+
+    padding: clamp(80px, 3svh, 40px) 0;
+
+    background: linear-gradient(
+        120deg,
+        #e3f3fd 0%,
+        #dceffa 55%,
+        #d7ecf9 100%
+    );
+
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* ==================================================
+   03. LEFT SIDE
+================================================== */
+
+.contact-left {
+
+    min-width: 0;
+
+    padding-left: clamp(18px, 2vw, 36px);
+
+}
+
+
+/* ==================================================
+   04. SECTION NUMBER
+================================================== */
+
+.contact-number {
+
+    display: flex;
+    align-items: center;
+
+    gap: 38px;
+
+    /* Reduced from 35px */
+    margin-bottom: 24px;
+
+    color: var(--burgundy);
+
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+/* Contact section number */
+
+.contact-section-number {
+    color: #9a2f57;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.contact-number-line {
+
+    width: 62px;
+    height: 2px;
+
+    background: var(--burgundy);
+
+}
+
+
+/* ==================================================
+   05. MAIN HEADING
+================================================== */
+
+.contact-title {
+
+    /* Reduced from 32px */
+    margin: 0 0 22px;
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(64px, 6.5vw, 104px);
+
+    font-weight: 400;
+    line-height: 1;
+
+    letter-spacing: -0.065em;
+
+    color: #20322b;
+
+}
+
+.contact-title span,
+.contact-title em {
+
+    display: block;
+
+}
+
+.contact-title em {
+
+    font-style: italic;
+    font-weight: 400;
+
+    color: var(--burgundy);
+
+}
+
+
+/* ==================================================
+   06. CONTACT DESCRIPTION
+================================================== */
+
+.contact-description {
+
+    max-width: 570px;
+    margin: 0;
+
+    font-size: clamp(13px, 0.9vw, 16px);
+    font-weight: 400;
+
+    line-height: 1.65;
+
+    color: #59666a;
+
+}
+
+
+/* ==================================================
+   07. SOCIAL LINKS
+================================================== */
+
+.contact-socials {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    max-width: 550px;
+
+    /* Reduced from 48px */
+    margin-top: 28px;
+
+}
+
+
+/* Each Social Link */
+
+.contact-social-item {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-width: 70px;
+
+    color: #24332f;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    text-align: center;
+
+    transition: transform 0.2s ease;
+
+}
+
+
+/* Icon Circle */
+
+.contact-social-icon {
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(154, 47, 87, 0.07);
+
+    border-radius: 50%;
+
+    color: var(--burgundy);
+
+    transition: background 0.2s ease;
+
+}
+
+
+/* SVG Icons */
+
+.contact-social-icon svg {
+
+    width: 28px;
+    height: 28px;
+
+}
+
+
+/* Hover */
+
+.contact-social-item:hover {
+
+    transform: translateY(-3px);
+
+}
+
+.contact-social-item:hover .contact-social-icon {
+
+    background: rgba(154, 47, 87, 0.14);
+
+}
+
+
+/* ==================================================
+   08. LOCATION & AVAILABILITY
+================================================== */
+
+.contact-info-footer {
+
+    max-width: 570px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0;
+
+    /* Reduced vertical spacing */
+    margin-top: 24px;
+    padding-top: 20px;
+
+    border-top: 1px solid
+        rgba(105, 136, 158, 0.27);
+
+}
+
+
+/* Footer Information */
+
+.contact-footer-item {
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    min-width: 0;
+    flex: 1;
+
+}
+
+
+/* Divider Between Footer Items */
+
+.contact-footer-item + .contact-footer-item {
+
+    border-left: 1px solid
+        rgba(105, 136, 158, 0.27);
+
+    margin-left: 25px;
+    padding-left: 30px;
+
+}
+
+
+/* Footer SVG */
+
+.contact-footer-item > svg {
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    color: var(--burgundy);
+
+}
+
+
+/* Small Label */
+
+.contact-footer-label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #879093;
+
+}
+
+
+/* Footer Description */
+
+.contact-footer-item p {
+
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #24332f;
+
+}
+
+
+/* ==================================================
+   09. RIGHT SIDE
+================================================== */
+
+.contact-right {
+
+    position: relative;
+
+    min-width: 0;
+
+    /* Remove unnecessary bottom padding */
+    padding-bottom: 0;
+
+}
+
+
+/* ==================================================
+   10. FORM CARD
+================================================== */
+
+.contact-form-card {
+
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    /* More compact card */
+    padding: 22px 34px 26px;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    border: 1px solid
+        rgba(120, 116, 112, 0.17);
+
+    border-radius: 25px;
+
+}
+
+
+/* ==================================================
+   11. HANDWRITTEN ANNOTATION
+================================================== */
+
+.contact-handwritten {
+
+    position: relative;
+
+    /* Reduced from 75px */
+    height: 55px;
+
+    margin-bottom: 5px;
+
+    color: var(--burgundy);
+
+}
+
+
+/* Handwritten Text */
+
+.contact-handwritten > span {
+
+    display: inline-block;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 32px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    transform: rotate(-10deg);
+
+}
+
+
+/* Curved Arrow */
+
+.contact-handwritten svg {
+
+    position: absolute;
+
+    top: 0;
+    left: 145px;
+
+    width: 130px;
+    height: 80px;
+
+    color: rgba(154, 47, 87, 0.35);
+
+}
+
+
+/* ==================================================
+   12. CONTACT FORM
+================================================== */
+
+.contact-form {
+
+    display: flex;
+    flex-direction: column;
+
+    /* Reduced from 22px */
+    gap: 15px;
+
+}
+
+
+/* Form Fields */
+
+.contact-field {
+
+    display: flex;
+    flex-direction: column;
+
+    /* Reduced from 9px */
+    gap: 6px;
+
+}
+
+
+/* Labels */
+
+.contact-field label {
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #24332f;
+
+}
+
+
+/* Inputs & Textarea */
+
+.contact-field input,
+.contact-field textarea {
+
+    width: 100%;
+
+    padding: 12px 16px;
+
+    background: transparent;
+
+    border: 1px solid
+        rgba(120, 116, 112, 0.26);
+
+    border-radius: 13px;
+
+    outline: none;
+
+    font-family: var(--font-body);
+    font-size: 12px;
+
+    color: var(--text-dark);
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+/* Input Height */
+
+.contact-field input {
+
+    height: 45px;
+
+}
+
+
+/* Textarea */
+
+.contact-field textarea {
+
+    min-height: 95px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+
+}
+
+
+/* Placeholder */
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+
+    color: #959b9e;
+
+}
+
+
+/* Focus */
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+
+    border-color: var(--burgundy);
+
+    background: rgba(255, 255, 255, 0.4);
+
+}
+
+
+/* ==================================================
+   13. SEND MESSAGE BUTTON
+================================================== */
+
+.contact-submit {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    align-self: flex-start;
+
+    gap: 40px;
+
+    width: 275px;
+    max-width: 100%;
+
+    /* Reduced from 56px */
+    min-height: 46px;
+
+    margin-top: 0;
+    padding: 0 30px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: var(--burgundy);
+
+    color: #ffffff;
+
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+/* Arrow */
+
+.contact-submit span {
+
+    font-size: 23px;
+    line-height: 1;
+
+}
+
+
+/* Hover */
+
+.contact-submit:hover {
+
+    background: var(--burgundy-dark);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Keyboard Focus */
+
+.contact-submit:focus-visible {
+
+    outline: 2px solid var(--burgundy);
+    outline-offset: 4px;
+
+}
+
+
+/* ==================================================
+   14. BOTTOM DECORATIVE DOODLE
+================================================== */
+
+.contact-bottom-doodle {
+
+    position: absolute;
+
+    width: 250px;
+    height: auto;
+
+    right: -45px;
+    bottom: -18px;
+
+    color: rgba(154, 47, 87, 0.3);
+
+    pointer-events: none;
+
+}
+
+
+/* ==================================================
+   15. LAPTOP SCREENS
+   Heading remains exactly 36px
+   769px — 1440px
+================================================== */
+
+@media (min-width: 769px) and (max-width: 1440px) {
+
+    /* Heading */
+
+    .contact-title {
+
+        font-size: 36px;
+        line-height: 1.12;
+
+        margin-bottom: 22px;
+
+    }
+
+    /* Section Number */
+
+    .contact-number {
+        margin-bottom: 24px;
+    }
+
+    /* Description */
+
+    .contact-description {
+
+        font-size: 13px;
+        line-height: 1.7;
+
+    }
+
+    /* Social Links */
+
+    .contact-socials {
+        margin-top: 28px;
+    }
+
+    .contact-social-icon {
+
+        width: 45px;
+        height: 45px;
+
+    }
+
+    .contact-social-icon svg {
+
+        width: 25px;
+        height: 25px;
+
+    }
+
+    /* Information Footer */
+
+    .contact-info-footer {
+
+        margin-top: 24px;
+        padding-top: 20px;
+
+    }
+
+    /* Form Card */
+
+    .contact-form-card {
+
+        padding: 22px 30px 26px;
+
+    }
+
+    /* Form Fields */
+
+    .contact-field input {
+        height: 45px;
+    }
+
+    .contact-field textarea {
+        min-height: 95px;
+    }
+
+    /* Submit */
+
+    .contact-submit {
+
+        min-height: 46px;
+        width: 230px;
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* ==================================================
+   16. TABLET
+   Screens up to 1000px
+================================================== */
+
+@media (max-width: 1000px) {
+
+    .contact-section {
+
+        min-height: auto;
+
+        padding: 45px 0 55px;
+
+    }
+
+    /* Stack Two Columns */
+
+    .contact-container {
+
+        grid-template-columns: 1fr;
+
+        max-width: 760px;
+
+        gap: 40px;
+
+    }
+
+    .contact-left {
+        padding-left: 0;
+    }
+
+    /* Heading */
+
+    .contact-title {
+        font-size: 36px;
+    }
+
+    /* Description */
+
+    .contact-description {
+        max-width: 600px;
+    }
+
+    /* Social Links */
+
+    .contact-socials {
+        max-width: 550px;
+    }
+
+    /* Form */
+
+    .contact-right {
+        padding-bottom: 0;
+    }
+
+    .contact-form-card {
+        padding: 22px 30px 26px;
+    }
+
+}
+
+
+/* ==================================================
+   17. MOBILE
+   Screens up to 768px
+================================================== */
+
+@media (max-width: 768px) {
+
+    /* Section */
+
+    .contact-section {
+
+        padding: 45px 0 60px;
+
+    }
+
+    /* Container */
+
+    .contact-container {
+
+        width: calc(100% - 42px);
+
+        padding-inline: 0;
+
+        gap: 40px;
+
+    }
+
+    /* Number */
+
+    .contact-number {
+
+        gap: 25px;
+
+        margin-bottom: 22px;
+
+        font-size: 14px;
+
+    }
+
+    .contact-number-line {
+        width: 48px;
+    }
+
+    /* Heading */
+
+    .contact-title {
+
+        font-size: clamp(30px, 5.4vw, 36px);
+        line-height: 1.12;
+
+        margin-bottom: 20px;
+
+    }
+
+    /* Description */
+
+    .contact-description {
+
+        font-size: 14px;
+        line-height: 1.75;
+
+    }
+
+    /* Social Links */
+
+    .contact-socials {
+
+        margin-top: 28px;
+
+        gap: 10px;
+
+        max-width: 450px;
+
+    }
+
+    .contact-social-item {
+
+        min-width: 0;
+        flex: 1;
+
+        gap: 10px;
+
+        font-size: 12px;
+
+    }
+
+    .contact-social-icon {
+
+        width: 49px;
+        height: 49px;
+
+    }
+
+    .contact-social-icon svg {
+
+        width: 23px;
+        height: 23px;
+
+    }
+
+    /* Footer */
+
+    .contact-info-footer {
+
+        margin-top: 24px;
+        padding-top: 20px;
+
+        flex-wrap: wrap;
+
+        gap: 22px;
+
+    }
+
+    .contact-footer-item {
+
+        flex: 1 1 190px;
+
+    }
+
+    .contact-footer-item + .contact-footer-item {
+
+        margin-left: 0;
+        padding-left: 0;
+
+        border-left: none;
+
+    }
+
+    .contact-footer-item > svg {
+
+        width: 25px;
+        height: 25px;
+
+    }
+
+    .contact-footer-item p {
+        font-size: 13px;
+    }
+
+    /* Right Side */
+
+    .contact-right {
+        padding-bottom: 0;
+    }
+
+    /* Form Card */
+
+    .contact-form-card {
+
+        padding: 22px 22px 26px;
+
+        border-radius: 20px;
+
+    }
+
+    /* Handwritten Note */
+
+    .contact-handwritten {
+
+        height: 55px;
+        margin-bottom: 5px;
+
+    }
+
+    .contact-handwritten > span {
+        font-size: 28px;
+    }
+
+    .contact-handwritten svg {
+
+        width: 105px;
+        height: 65px;
+
+        left: 115px;
+
+    }
+
+    /* Form */
+
+    .contact-form {
+        gap: 15px;
+    }
+
+    .contact-field label {
+        font-size: 13px;
+    }
+
+    .contact-field input,
+    .contact-field textarea {
+
+        font-size: 13px;
+        padding: 12px 14px;
+
+    }
+
+    .contact-field input {
+        height: 45px;
+    }
+
+    .contact-field textarea {
+        min-height: 95px;
+    }
+
+    /* Button */
+
+    .contact-submit {
+
+        min-height: 46px;
+
+        width: 220px;
+
+        padding: 0 25px;
+
+        font-size: 13px;
+
+    }
+
+    .contact-submit span {
+        font-size: 20px;
+    }
+
+    /* Decoration */
+
+    .contact-bottom-doodle {
+
+        width: 150px;
+
+        right: -10px;
+        bottom: -5px;
+
+    }
+
+}
+
+
+/* ==================================================
+   18. SMALL MOBILE
+   Screens up to 375px
+================================================== */
+
+@media (max-width: 375px) {
+
+    .contact-container {
+        width: calc(100% - 32px);
+    }
+
+    .contact-title {
+        font-size: 30px;
+    }
+
+    .contact-description {
+        font-size: 13px;
+    }
+
+    .contact-social-icon {
+
+        width: 44px;
+        height: 44px;
+
+    }
+
+    .contact-social-item {
+        font-size: 11px;
+    }
+
+    .contact-footer-item {
+
+        flex-basis: 100%;
+
+    }
+
+    .contact-form-card {
+        padding: 20px 17px 25px;
+    }
+
+    .contact-submit {
+        width: 100%;
+    }
+
+}
+
+
+/* ==================================================
+   19. ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-social-item,
+    .contact-social-icon,
+    .contact-submit,
+    .contact-field input,
+    .contact-field textarea {
+
+        transition: none;
+
+    }
+
+}
